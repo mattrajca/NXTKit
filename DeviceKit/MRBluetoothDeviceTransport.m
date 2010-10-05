@@ -43,9 +43,7 @@
 }
 
 - (BOOL)open:(NSError **)outError {
-	IOReturn status;
-	
-	status = [_bluetoothDevice openConnection:self];
+	IOReturn status = [_bluetoothDevice openConnection:self];
 	
 	if (status != kIOReturnSuccess) {
 		if (outError)
@@ -53,37 +51,6 @@
 		
 		return NO;
 	}
-	
-	BluetoothRFCOMMChannelID channelID = 0;
-	
-	IOBluetoothSDPUUID *uuid = [IOBluetoothSDPUUID uuid16:kBluetoothSDPUUID16ServiceClassSerialPort];
-	IOBluetoothSDPServiceRecord *record = [_bluetoothDevice getServiceRecordForUUID:uuid];
-	
-	status = [record getRFCOMMChannelID:&channelID];
-	
-	if (status != kIOReturnSuccess) {
-		if (outError)
-			*outError = [NSError IOKitErrorWithReturnCode:status];
-		
-		_channel = nil;
-		
-		return NO;
-	}
-	
-	status = [_bluetoothDevice openRFCOMMChannelAsync:&_channel
-										withChannelID:channelID
-											 delegate:self];
-	
-	if (status != kIOReturnSuccess) {
-		if (outError)
-			*outError = [NSError IOKitErrorWithReturnCode:status];
-		
-		_channel = nil;
-		
-		return NO;
-	}
-	
-	[_channel retain];
 	
 	return YES;
 }
@@ -115,6 +82,38 @@
 	return NO;
 }
 
+- (void)connectionComplete:(IOBluetoothDevice *)device status:(IOReturn)status {
+	if (status != kIOReturnSuccess) {
+		[self failedToOpen:[NSError IOKitErrorWithReturnCode:status]];
+		return;
+	}
+	
+	BluetoothRFCOMMChannelID channelID = 0;
+	
+	IOBluetoothSDPUUID *uuid = [IOBluetoothSDPUUID uuid16:kBluetoothSDPUUID16ServiceClassSerialPort];
+	IOBluetoothSDPServiceRecord *record = [_bluetoothDevice getServiceRecordForUUID:uuid];
+	
+	status = [record getRFCOMMChannelID:&channelID];
+	
+	if (status != kIOReturnSuccess) {
+		[self failedToOpen:[NSError IOKitErrorWithReturnCode:status]];
+		return;
+	}
+	
+	status = [_bluetoothDevice openRFCOMMChannelAsync:&_channel
+										withChannelID:channelID
+											 delegate:self];
+	
+	if (status != kIOReturnSuccess) {
+		_channel = nil;
+		
+		[self failedToOpen:[NSError IOKitErrorWithReturnCode:status]];
+		return;
+	}
+	
+	[_channel retain];
+}
+
 - (void)rfcommChannelOpenComplete:(IOBluetoothRFCOMMChannel *)rfcommChannel
 						   status:(IOReturn)status {
 	
@@ -123,8 +122,7 @@
 		return;
 	}
 	
-	NSError *error = [NSError IOKitErrorWithReturnCode:status];
-	[self failedToOpen:error];
+	[self failedToOpen:[NSError IOKitErrorWithReturnCode:status]];
 }
 
 - (void)rfcommChannelData:(IOBluetoothRFCOMMChannel *)rfcommChannel
