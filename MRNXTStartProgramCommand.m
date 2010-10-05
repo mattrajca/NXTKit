@@ -16,7 +16,7 @@
 }
 
 - (NSData *)data {
-	return [NSData dataWithBytes:[_filename UTF8String] length:20];
+	return [NSMutableData dataWithNXTFilename:_filename];
 }
 
 - (void)dealloc {

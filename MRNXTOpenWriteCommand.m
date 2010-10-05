@@ -28,7 +28,7 @@
 
 - (NSData *)data {
 	NSMutableData *data = [[NSMutableData alloc] init];
-	[data appendBytes:[_filename UTF8String] length:20];
+	[data mr_appendNXTFilename:_filename];
 	
 	uint32_t size = OSSwapHostToLittleInt32(_size);
 	[data appendBytes:&size length:sizeof(size)];

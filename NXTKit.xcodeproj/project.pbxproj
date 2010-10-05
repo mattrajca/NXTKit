@@ -42,6 +42,8 @@
 		C9A97FA3125A924600390157 /* NSError+IOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A97F98125A924600390157 /* NSError+IOKit.m */; };
 		C9A97FA5125A925600390157 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A97FA4125A925600390157 /* IOBluetooth.framework */; };
 		C9AA8AA112060A6800E1C65B /* NXTKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AA8A9F12060A6800E1C65B /* NXTKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9BA1698125B5DC900374545 /* NSMutableData+NXT.h in Headers */ = {isa = PBXBuildFile; fileRef = C9BA1696125B5DC900374545 /* NSMutableData+NXT.h */; };
+		C9BA1699125B5DC900374545 /* NSMutableData+NXT.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA1697125B5DC900374545 /* NSMutableData+NXT.m */; };
 		C9D52235124FBC0800C9AD55 /* MRNXTPlaySoundFileCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D52233124FBC0800C9AD55 /* MRNXTPlaySoundFileCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9D52236124FBC0800C9AD55 /* MRNXTPlaySoundFileCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D52234124FBC0800C9AD55 /* MRNXTPlaySoundFileCommand.m */; };
 		C9E79F63124D4E93003DAB85 /* MRNXTFindFirstCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E79F61124D4E93003DAB85 /* MRNXTFindFirstCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -107,6 +109,8 @@
 		C9A97F98125A924600390157 /* NSError+IOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+IOKit.m"; sourceTree = "<group>"; };
 		C9A97FA4125A925600390157 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 		C9AA8A9F12060A6800E1C65B /* NXTKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTKit.h; sourceTree = "<group>"; };
+		C9BA1696125B5DC900374545 /* NSMutableData+NXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableData+NXT.h"; sourceTree = "<group>"; };
+		C9BA1697125B5DC900374545 /* NSMutableData+NXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableData+NXT.m"; sourceTree = "<group>"; };
 		C9D52233124FBC0800C9AD55 /* MRNXTPlaySoundFileCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTPlaySoundFileCommand.h; sourceTree = "<group>"; };
 		C9D52234124FBC0800C9AD55 /* MRNXTPlaySoundFileCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNXTPlaySoundFileCommand.m; sourceTree = "<group>"; };
 		C9E79F61124D4E93003DAB85 /* MRNXTFindFirstCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTFindFirstCommand.h; sourceTree = "<group>"; };
@@ -268,6 +272,8 @@
 				C98D0C011204FF3800E56E77 /* MRNXTResponse.m */,
 				C98D0BF31204FB6900E56E77 /* NSMutableArray+Queue.h */,
 				C98D0BF41204FB6900E56E77 /* NSMutableArray+Queue.m */,
+				C9BA1696125B5DC900374545 /* NSMutableData+NXT.h */,
+				C9BA1697125B5DC900374545 /* NSMutableData+NXT.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 				C9A97F9E125A924600390157 /* MRDeviceTransport.h in Headers */,
 				C9A97FA0125A924600390157 /* MRUSBDeviceTransport.h in Headers */,
 				C9A97FA2125A924600390157 /* NSError+IOKit.h in Headers */,
+				C9BA1698125B5DC900374545 /* NSMutableData+NXT.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +437,7 @@
 				C9A97F9F125A924600390157 /* MRDeviceTransport.m in Sources */,
 				C9A97FA1125A924600390157 /* MRUSBDeviceTransport.m in Sources */,
 				C9A97FA3125A924600390157 /* NSError+IOKit.m in Sources */,
+				C9BA1699125B5DC900374545 /* NSMutableData+NXT.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

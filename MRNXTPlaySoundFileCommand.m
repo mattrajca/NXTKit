@@ -19,7 +19,7 @@
 - (NSData *)data {
 	NSMutableData *data = [NSMutableData data];
 	[data appendBytes:&_loop length:1];
-	[data appendBytes:[_filename UTF8String] length:20];
+	[data mr_appendNXTFilename:_filename];
 	
 	return data;
 }

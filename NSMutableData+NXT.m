@@ -1,0 +1,25 @@
+//
+//  NSMutableData+NXT.m
+//  NXTKit
+//
+//  Copyright Matt Rajca 2010. All rights reserved.
+//
+
+#import "NSMutableData+NXT.h"
+
+@implementation NSMutableData (NXT)
+
++ (id)dataWithNXTFilename:(NSString *)filename {
+	NSMutableData *data = [[NSMutableData alloc] init];
+	[data mr_appendNXTFilename:filename];
+	
+	return [data autorelease];
+}
+
+- (void)mr_appendNXTFilename:(NSString *)filename {
+	NSString *fn = [filename length] > 19 ? [filename substringToIndex:20] : filename;
+	
+	[self appendBytes:[fn UTF8String] length:20];
+}
+
+@end
