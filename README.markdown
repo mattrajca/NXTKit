@@ -1,7 +1,7 @@
 NXTKit
 ======
 
-NXTKit is a native (Snow Leopard-only) Cocoa framework for talking to Lego NXT devices. Bluetooth is currently the only supported transport protocol. NXTKit supports both GC and non-GC environments.
+NXTKit is a native (Snow Leopard-only) Cocoa framework for talking with Lego NXT devices. Bluetooth is currently the only supported transport protocol. Garbage Collected and non-GC environments are supported.
 
 Basic Usage
 -----------
