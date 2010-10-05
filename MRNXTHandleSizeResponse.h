@@ -5,15 +5,13 @@
 //  Copyright Matt Rajca 2010. All rights reserved.
 //
 
-#import "MRNXTResponse.h"
+#import "MRNXTHandleResponse.h"
 
-@interface MRNXTHandleSizeResponse : MRNXTResponse {
+@interface MRNXTHandleSizeResponse : MRNXTHandleResponse {
   @private
-	uint8_t _handle;
-	uint32_t _size;
+	uint16_t _size;
 }
 
-@property (readonly) uint8_t handle;
-@property (readonly) uint32_t size;
+@property (readonly) uint16_t size;
 
 @end

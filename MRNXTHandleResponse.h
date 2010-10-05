@@ -5,7 +5,9 @@
 //  Copyright Matt Rajca 2010. All rights reserved.
 //
 
-@interface MRNXTHandleResponse : NSObject {
+#import "MRNXTResponse.h"
+
+@interface MRNXTHandleResponse : MRNXTResponse {
   @private
 	uint8_t _handle;
 }
