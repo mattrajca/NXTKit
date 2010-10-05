@@ -46,4 +46,10 @@
 			[self type], [self identifier], nil];
 }
 
+- (void)dealloc {
+	[_responseBlock release];
+	
+	[super dealloc];
+}
+
 @end
