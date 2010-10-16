@@ -10,7 +10,7 @@
 
 @interface MRNXTResetMotorPositionCommand : MRNXTCommand {
   @private
-    NXTOutputPort _port;
+	NXTOutputPort _port;
 	BOOL _relative;
 }
 
