@@ -19,6 +19,7 @@
 #import <NXTKit/MRNXTOpenWriteCommand.h>
 #import <NXTKit/MRNXTPlaySoundFileCommand.h>
 #import <NXTKit/MRNXTReadCommand.h>
+#import <NXTKit/MRNXTResetMotorPositionCommand.h>
 #import <NXTKit/MRNXTSetOutputStateCommand.h>
 #import <NXTKit/MRNXTStartProgramCommand.h>
 #import <NXTKit/MRNXTWriteCommand.h>

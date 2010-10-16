@@ -28,6 +28,8 @@
 		C98D0C021204FF3800E56E77 /* MRNXTResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = C98D0C001204FF3800E56E77 /* MRNXTResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C98D0C031204FF3800E56E77 /* MRNXTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C98D0C011204FF3800E56E77 /* MRNXTResponse.m */; };
 		C98D0C3B120502E900E56E77 /* MRNXTConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C98D0C39120502E900E56E77 /* MRNXTConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C997ACDE126A02E1006D4371 /* MRNXTResetMotorPositionCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = C997ACDC126A02E1006D4371 /* MRNXTResetMotorPositionCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C997ACDF126A02E1006D4371 /* MRNXTResetMotorPositionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C997ACDD126A02E1006D4371 /* MRNXTResetMotorPositionCommand.m */; };
 		C9A97F30125A8E8300390157 /* MRNXTHandleResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A97F2E125A8E8300390157 /* MRNXTHandleResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9A97F31125A8E8300390157 /* MRNXTHandleResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A97F2F125A8E8300390157 /* MRNXTHandleResponse.m */; };
 		C9A97F9A125A924600390157 /* MRBluetoothDeviceTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A97F8F125A924600390157 /* MRBluetoothDeviceTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,6 +97,8 @@
 		C98D0C001204FF3800E56E77 /* MRNXTResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTResponse.h; sourceTree = "<group>"; };
 		C98D0C011204FF3800E56E77 /* MRNXTResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNXTResponse.m; sourceTree = "<group>"; };
 		C98D0C39120502E900E56E77 /* MRNXTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTConstants.h; sourceTree = "<group>"; };
+		C997ACDC126A02E1006D4371 /* MRNXTResetMotorPositionCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTResetMotorPositionCommand.h; sourceTree = "<group>"; };
+		C997ACDD126A02E1006D4371 /* MRNXTResetMotorPositionCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNXTResetMotorPositionCommand.m; sourceTree = "<group>"; };
 		C9A97F2E125A8E8300390157 /* MRNXTHandleResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTHandleResponse.h; sourceTree = "<group>"; };
 		C9A97F2F125A8E8300390157 /* MRNXTHandleResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNXTHandleResponse.m; sourceTree = "<group>"; };
 		C9A97F8F125A924600390157 /* MRBluetoothDeviceTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRBluetoothDeviceTransport.h; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 				C9D52234124FBC0800C9AD55 /* MRNXTPlaySoundFileCommand.m */,
 				C9EED88F1256ABF80035519C /* MRNXTReadCommand.h */,
 				C9EED8901256ABF80035519C /* MRNXTReadCommand.m */,
+				C997ACDC126A02E1006D4371 /* MRNXTResetMotorPositionCommand.h */,
+				C997ACDD126A02E1006D4371 /* MRNXTResetMotorPositionCommand.m */,
 				C98D0BEF1204F5A100E56E77 /* MRNXTSetOutputStateCommand.h */,
 				C98D0BF01204F5A100E56E77 /* MRNXTSetOutputStateCommand.m */,
 				C966CF32124E3664008EDF60 /* MRNXTStartProgramCommand.h */,
@@ -335,6 +341,7 @@
 				C9EED8551256A2F20035519C /* MRNXTOpenWriteCommand.h in Headers */,
 				C9EED85B1256A4B90035519C /* MRNXTHandleSizeResponse.h in Headers */,
 				C9EED8891256A8D20035519C /* MRNXTCloseCommand.h in Headers */,
+				C997ACDE126A02E1006D4371 /* MRNXTResetMotorPositionCommand.h in Headers */,
 				C9EED8911256ABF80035519C /* MRNXTReadCommand.h in Headers */,
 				C9EED8A31256AE020035519C /* MRNXTWriteCommand.h in Headers */,
 				C93A187B12577BE7008F89C8 /* MRNXTDataResponse.h in Headers */,
@@ -438,6 +445,7 @@
 				C9A97FA1125A924600390157 /* MRUSBDeviceTransport.m in Sources */,
 				C9A97FA3125A924600390157 /* NSError+IOKit.m in Sources */,
 				C9BA1699125B5DC900374545 /* NSMutableData+NXT.m in Sources */,
+				C997ACDF126A02E1006D4371 /* MRNXTResetMotorPositionCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
