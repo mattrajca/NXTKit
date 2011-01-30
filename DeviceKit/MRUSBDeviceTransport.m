@@ -301,7 +301,7 @@ static char readBuffer[READ_BUFFER_LEN];
 		_registeredNotification = 0;
 	}
 	
-	for (NSMutableArray *array in _pipes) {
+	for (NSMutableArray *array in [_pipes allValues]) {
 		[array removeAllObjects];
 	}
 	
