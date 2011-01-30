@@ -2,7 +2,7 @@
 //  MRDevice.m
 //  DeviceKit
 //
-//  Copyright Matt Rajca 2010. All rights reserved.
+//  Copyright Matt Rajca 2010-2011. All rights reserved.
 //
 
 #import "MRDevice.h"
@@ -51,6 +51,10 @@
 	}
 }
 
+- (void)deviceTransportDidWriteData:(MRDeviceTransport *)aTransport {
+	[self wroteData];
+}
+
 - (void)deviceTransport:(MRDeviceTransport *)aTransport
 		 didReceiveData:(NSData *)data {
 	
@@ -63,10 +67,13 @@
 	}
 }
 
+- (void)wroteData { }
+
 - (void)receivedData:(NSData *)data { }
 
 - (void)finalize {
 	[self close];
+	[super finalize];
 }
 
 - (void)dealloc {

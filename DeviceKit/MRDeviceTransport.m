@@ -2,7 +2,7 @@
 //  MRDeviceTransport.m
 //  DeviceKit
 //
-//  Copyright Matt Rajca 2010. All rights reserved.
+//  Copyright Matt Rajca 2010-2011. All rights reserved.
 //
 
 #import "MRDeviceTransport.h"
@@ -32,6 +32,12 @@
 								 userInfo:nil];
 	
 	return NO;
+}
+
+- (void)wroteData {
+	if ([_delegate respondsToSelector:@selector(deviceTransportDidWriteData:)]) {
+		[_delegate deviceTransportDidWriteData:self];
+	}
 }
 
 - (void)receivedData:(NSData *)data {

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		C920434612F3B5430090C9CC /* MRUSBDeviceEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = C920434412F3B5430090C9CC /* MRUSBDeviceEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C920434712F3B5430090C9CC /* MRUSBDeviceEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C920434512F3B5430090C9CC /* MRUSBDeviceEntry.m */; };
+		C920434D12F3B7C10090C9CC /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C920434C12F3B7C10090C9CC /* IOKit.framework */; };
 		C928088F124CEC73001E5771 /* MRNXTGetDeviceInfoCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = C928088D124CEC73001E5771 /* MRNXTGetDeviceInfoCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9280890124CEC73001E5771 /* MRNXTGetDeviceInfoCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C928088E124CEC73001E5771 /* MRNXTGetDeviceInfoCommand.m */; };
 		C92808EA124CF505001E5771 /* MRNXTDeviceInfoResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = C92808E8124CF505001E5771 /* MRNXTDeviceInfoResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,12 +41,14 @@
 		C9A97F9D125A924600390157 /* MRDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A97F92125A924600390157 /* MRDevice.m */; };
 		C9A97F9E125A924600390157 /* MRDeviceTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A97F93125A924600390157 /* MRDeviceTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9A97F9F125A924600390157 /* MRDeviceTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A97F94125A924600390157 /* MRDeviceTransport.m */; };
-		C9A97FA0125A924600390157 /* MRUSBDeviceTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A97F95125A924600390157 /* MRUSBDeviceTransport.h */; };
+		C9A97FA0125A924600390157 /* MRUSBDeviceTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A97F95125A924600390157 /* MRUSBDeviceTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9A97FA1125A924600390157 /* MRUSBDeviceTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A97F96125A924600390157 /* MRUSBDeviceTransport.m */; };
 		C9A97FA2125A924600390157 /* NSError+IOKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A97F97125A924600390157 /* NSError+IOKit.h */; };
 		C9A97FA3125A924600390157 /* NSError+IOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A97F98125A924600390157 /* NSError+IOKit.m */; };
 		C9A97FA5125A925600390157 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A97FA4125A925600390157 /* IOBluetooth.framework */; };
 		C9AA8AA112060A6800E1C65B /* NXTKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AA8A9F12060A6800E1C65B /* NXTKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9B692AA12F495E4001A8138 /* MRUSBDevicePipeDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = C9B692A812F495E4001A8138 /* MRUSBDevicePipeDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9B692AB12F495E4001A8138 /* MRUSBDevicePipeDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B692A912F495E4001A8138 /* MRUSBDevicePipeDescriptor.m */; };
 		C9BA1698125B5DC900374545 /* NSMutableData+NXT.h in Headers */ = {isa = PBXBuildFile; fileRef = C9BA1696125B5DC900374545 /* NSMutableData+NXT.h */; };
 		C9BA1699125B5DC900374545 /* NSMutableData+NXT.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA1697125B5DC900374545 /* NSMutableData+NXT.m */; };
 		C9D52235124FBC0800C9AD55 /* MRNXTPlaySoundFileCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D52233124FBC0800C9AD55 /* MRNXTPlaySoundFileCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -78,6 +83,9 @@
 		32DBCF5E0370ADEE00C91783 /* NXTKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTKit_Prefix.pch; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* NXTKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NXTKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C920434412F3B5430090C9CC /* MRUSBDeviceEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRUSBDeviceEntry.h; sourceTree = "<group>"; };
+		C920434512F3B5430090C9CC /* MRUSBDeviceEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRUSBDeviceEntry.m; sourceTree = "<group>"; };
+		C920434C12F3B7C10090C9CC /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		C928088D124CEC73001E5771 /* MRNXTGetDeviceInfoCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTGetDeviceInfoCommand.h; sourceTree = "<group>"; };
 		C928088E124CEC73001E5771 /* MRNXTGetDeviceInfoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNXTGetDeviceInfoCommand.m; sourceTree = "<group>"; };
 		C92808E8124CF505001E5771 /* MRNXTDeviceInfoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTDeviceInfoResponse.h; sourceTree = "<group>"; };
@@ -113,6 +121,8 @@
 		C9A97F98125A924600390157 /* NSError+IOKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+IOKit.m"; sourceTree = "<group>"; };
 		C9A97FA4125A925600390157 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 		C9AA8A9F12060A6800E1C65B /* NXTKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTKit.h; sourceTree = "<group>"; };
+		C9B692A812F495E4001A8138 /* MRUSBDevicePipeDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRUSBDevicePipeDescriptor.h; sourceTree = "<group>"; };
+		C9B692A912F495E4001A8138 /* MRUSBDevicePipeDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRUSBDevicePipeDescriptor.m; sourceTree = "<group>"; };
 		C9BA1696125B5DC900374545 /* NSMutableData+NXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableData+NXT.h"; sourceTree = "<group>"; };
 		C9BA1697125B5DC900374545 /* NSMutableData+NXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableData+NXT.m"; sourceTree = "<group>"; };
 		C9D52233124FBC0800C9AD55 /* MRNXTPlaySoundFileCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTPlaySoundFileCommand.h; sourceTree = "<group>"; };
@@ -147,6 +157,7 @@
 			files = (
 				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
 				C9A97FA5125A925600390157 /* IOBluetooth.framework in Frameworks */,
+				C920434D12F3B7C10090C9CC /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +219,7 @@
 			children = (
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
 				C9A97FA4125A925600390157 /* IOBluetooth.framework */,
+				C920434C12F3B7C10090C9CC /* IOKit.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -256,6 +268,10 @@
 				C9A97F92125A924600390157 /* MRDevice.m */,
 				C9A97F93125A924600390157 /* MRDeviceTransport.h */,
 				C9A97F94125A924600390157 /* MRDeviceTransport.m */,
+				C920434412F3B5430090C9CC /* MRUSBDeviceEntry.h */,
+				C920434512F3B5430090C9CC /* MRUSBDeviceEntry.m */,
+				C9B692A812F495E4001A8138 /* MRUSBDevicePipeDescriptor.h */,
+				C9B692A912F495E4001A8138 /* MRUSBDevicePipeDescriptor.m */,
 				C9A97F95125A924600390157 /* MRUSBDeviceTransport.h */,
 				C9A97F96125A924600390157 /* MRUSBDeviceTransport.m */,
 				C9A97F97125A924600390157 /* NSError+IOKit.h */,
@@ -352,6 +368,8 @@
 				C9A97FA0125A924600390157 /* MRUSBDeviceTransport.h in Headers */,
 				C9A97FA2125A924600390157 /* NSError+IOKit.h in Headers */,
 				C9BA1698125B5DC900374545 /* NSMutableData+NXT.h in Headers */,
+				C920434612F3B5430090C9CC /* MRUSBDeviceEntry.h in Headers */,
+				C9B692AA12F495E4001A8138 /* MRUSBDevicePipeDescriptor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +464,8 @@
 				C9A97FA3125A924600390157 /* NSError+IOKit.m in Sources */,
 				C9BA1699125B5DC900374545 /* NSMutableData+NXT.m in Sources */,
 				C997ACDF126A02E1006D4371 /* MRNXTResetMotorPositionCommand.m in Sources */,
+				C920434712F3B5430090C9CC /* MRUSBDeviceEntry.m in Sources */,
+				C9B692AB12F495E4001A8138 /* MRUSBDevicePipeDescriptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

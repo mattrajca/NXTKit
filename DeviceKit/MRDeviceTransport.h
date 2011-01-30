@@ -2,7 +2,7 @@
 //  MRDeviceTransport.h
 //  DeviceKit
 //
-//  Copyright Matt Rajca 2010. All rights reserved.
+//  Copyright Matt Rajca 2010-2011. All rights reserved.
 //
 
 @protocol MRDeviceTransportDelegate;
@@ -22,6 +22,7 @@
 - (BOOL)writeData:(NSData *)data error:(NSError **)outError;
 
 /* these methods should only be called by subclasses to invoke delegate methods */
+- (void)wroteData;
 - (void)receivedData:(NSData *)data;
 
 - (void)opened;
@@ -36,6 +37,7 @@
 
 @optional
 
+- (void)deviceTransportDidWriteData:(MRDeviceTransport *)aTransport;
 - (void)deviceTransport:(MRDeviceTransport *)aTransport didReceiveData:(NSData *)data;
 
 - (void)deviceTransportDidOpen:(MRDeviceTransport *)aTransport;

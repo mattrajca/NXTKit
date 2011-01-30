@@ -2,7 +2,7 @@
 //  MRDevice.h
 //  DeviceKit
 //
-//  Copyright Matt Rajca 2010. All rights reserved.
+//  Copyright Matt Rajca 2010-2011. All rights reserved.
 //
 
 #import "MRDeviceTransport.h"
@@ -28,6 +28,7 @@
 - (void)close;
 
 /* this is only for use by subclasses */
+- (void)wroteData;
 - (void)receivedData:(NSData *)data;
 
 @end

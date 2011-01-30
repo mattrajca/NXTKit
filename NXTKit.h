@@ -2,7 +2,7 @@
 //  NXTKit.h
 //  NXTKit
 //
-//  Copyright Matt Rajca 2010. All rights reserved.
+//  Copyright Matt Rajca 2010-2011. All rights reserved.
 //
 
 #import <NXTKit/MRNXTCommand.h>
@@ -33,3 +33,6 @@
 #import <NXTKit/MRBluetoothDeviceTransport.h>
 #import <NXTKit/MRDevice.h>
 #import <NXTKit/MRDeviceTransport.h>
+#import <NXTKit/MRUSBDeviceEntry.h>
+#import <NXTKit/MRUSBDevicePipeDescriptor.h>
+#import <NXTKit/MRUSBDeviceTransport.h>

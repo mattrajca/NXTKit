@@ -2,12 +2,13 @@
 //  MRNXTDevice.m
 //  NXTKit
 //
-//  Copyright Matt Rajca 2010. All rights reserved.
+//  Copyright Matt Rajca 2010-2011. All rights reserved.
 //
 
 #import "MRNXTDevice.h"
 
 #import "MRNXTCommand.h"
+#import "MRUSBDeviceTransport.h"
 #import "NSMutableArray+Queue.h"
 
 #import <objc/runtime.h>
@@ -55,7 +56,11 @@
 	uint8_t identifier = [_currentCommand identifier];
 	
 	NSMutableData *packet = [[NSMutableData alloc] init];
-	[packet appendBytes:&length length:sizeof(length)];
+	
+	if (![self.transport isKindOfClass:[MRUSBDeviceTransport class]]) {
+		[packet appendBytes:&length length:sizeof(length)];
+	}
+	
 	[packet appendBytes:&type length:sizeof(type)];
 	[packet appendBytes:&identifier length:sizeof(identifier)];
 	[packet appendData:data];
@@ -69,11 +74,40 @@
 	[packet release];
 }
 
+- (void)wroteData {
+	MRDeviceTransport *transport = self.transport;
+	
+	if ([transport isKindOfClass:[MRUSBDeviceTransport class]]) {
+		MRUSBDeviceTransport *usbTransport = (MRUSBDeviceTransport *) transport;
+		NSError *error = nil;
+		
+		if (![usbTransport scheduleRead:&error]) {
+			NSLog(@"Cannot schedule read: %@", error);
+		}
+	}
+}
+
 - (void)receivedData:(NSData *)data {
 	MRNXTResponseBlock block = _currentCommand.responseBlock;
 	
 	if (block) {
-		MRNXTResponse *resp = [[[_currentCommand responseClass] alloc] initWithData:data];
+		NSData *fullData = nil;
+		
+		if ([self.transport isKindOfClass:[MRUSBDeviceTransport class]]) {
+			fullData = [NSMutableData data];
+			
+			UInt8 bytesRead = [data length];
+			UInt8 empty = 0;
+			
+			[(NSMutableData *) fullData appendBytes:&bytesRead length:sizeof(bytesRead)];
+			[(NSMutableData *) fullData appendBytes:&empty length:sizeof(empty)];
+			[(NSMutableData *) fullData appendData:data];
+		}
+		else {
+			fullData = data;
+		}
+		
+		MRNXTResponse *resp = [[[_currentCommand responseClass] alloc] initWithData:fullData];
 		block(resp);
 		
 		[resp release];
