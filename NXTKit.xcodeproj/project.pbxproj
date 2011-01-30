@@ -208,7 +208,7 @@
 				C9A97F8D125A924600390157 /* DeviceKit */,
 				C9AA8A9C12060A4900E1C65B /* Commands */,
 				C9AA8A9B12060A2E00E1C65B /* Core */,
-				C92808E7124CF4F5001E5771 /* Response */,
+				C92808E7124CF4F5001E5771 /* Responses */,
 				C9AA8A9F12060A6800E1C65B /* NXTKit.h */,
 			);
 			name = Classes;
@@ -242,7 +242,7 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
-		C92808E7124CF4F5001E5771 /* Response */ = {
+		C92808E7124CF4F5001E5771 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
 				C93A187912577BE7008F89C8 /* MRNXTDataResponse.h */,
@@ -256,7 +256,7 @@
 				C9EED8591256A4B90035519C /* MRNXTHandleSizeResponse.h */,
 				C9EED85A1256A4B90035519C /* MRNXTHandleSizeResponse.m */,
 			);
-			name = Response;
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		C9A97F8D125A924600390157 /* DeviceKit */ = {
@@ -295,7 +295,7 @@
 				C9BA1696125B5DC900374545 /* NSMutableData+NXT.h */,
 				C9BA1697125B5DC900374545 /* NSMutableData+NXT.m */,
 			);
-			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		C9AA8A9C12060A4900E1C65B /* Commands */ = {
@@ -328,7 +328,7 @@
 				C9EED8A11256AE020035519C /* MRNXTWriteCommand.h */,
 				C9EED8A21256AE020035519C /* MRNXTWriteCommand.m */,
 			);
-			name = Commands;
+			path = Commands;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
