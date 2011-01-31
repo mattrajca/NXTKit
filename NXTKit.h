@@ -24,6 +24,7 @@
 #import <NXTKit/MRNXTSetOutputStateCommand.h>
 #import <NXTKit/MRNXTStartProgramCommand.h>
 #import <NXTKit/MRNXTWriteCommand.h>
+#import <NXTKit/MRNXTWriteIOMapCommand.h>
 
 #import <NXTKit/MRNXTDataResponse.h>
 #import <NXTKit/MRNXTDeviceInfoResponse.h>

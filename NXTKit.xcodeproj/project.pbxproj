@@ -22,6 +22,8 @@
 		C93FB1FC12F6177F00BA18F0 /* MRNXTReadIOMapCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C93FB1FA12F6177F00BA18F0 /* MRNXTReadIOMapCommand.m */; };
 		C93FB20912F618E400BA18F0 /* MRNXTIOMapResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = C93FB20712F618E400BA18F0 /* MRNXTIOMapResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C93FB20A12F618E400BA18F0 /* MRNXTIOMapResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C93FB20812F618E400BA18F0 /* MRNXTIOMapResponse.m */; };
+		C95FF64112F770BD00FCD7B6 /* MRNXTWriteIOMapCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = C95FF63F12F770BD00FCD7B6 /* MRNXTWriteIOMapCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C95FF64212F770BD00FCD7B6 /* MRNXTWriteIOMapCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C95FF64012F770BD00FCD7B6 /* MRNXTWriteIOMapCommand.m */; };
 		C966CF34124E3664008EDF60 /* MRNXTStartProgramCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = C966CF32124E3664008EDF60 /* MRNXTStartProgramCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C966CF35124E3664008EDF60 /* MRNXTStartProgramCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C966CF33124E3664008EDF60 /* MRNXTStartProgramCommand.m */; };
 		C98D0B2B1204E96200E56E77 /* MRNXTDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = C98D0B291204E96200E56E77 /* MRNXTDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -100,6 +102,8 @@
 		C93FB1FA12F6177F00BA18F0 /* MRNXTReadIOMapCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNXTReadIOMapCommand.m; sourceTree = "<group>"; };
 		C93FB20712F618E400BA18F0 /* MRNXTIOMapResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTIOMapResponse.h; sourceTree = "<group>"; };
 		C93FB20812F618E400BA18F0 /* MRNXTIOMapResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNXTIOMapResponse.m; sourceTree = "<group>"; };
+		C95FF63F12F770BD00FCD7B6 /* MRNXTWriteIOMapCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTWriteIOMapCommand.h; sourceTree = "<group>"; };
+		C95FF64012F770BD00FCD7B6 /* MRNXTWriteIOMapCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNXTWriteIOMapCommand.m; sourceTree = "<group>"; };
 		C966CF32124E3664008EDF60 /* MRNXTStartProgramCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTStartProgramCommand.h; sourceTree = "<group>"; };
 		C966CF33124E3664008EDF60 /* MRNXTStartProgramCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNXTStartProgramCommand.m; sourceTree = "<group>"; };
 		C98D0B291204E96200E56E77 /* MRNXTDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNXTDevice.h; sourceTree = "<group>"; };
@@ -339,6 +343,8 @@
 				C966CF33124E3664008EDF60 /* MRNXTStartProgramCommand.m */,
 				C9EED8A11256AE020035519C /* MRNXTWriteCommand.h */,
 				C9EED8A21256AE020035519C /* MRNXTWriteCommand.m */,
+				C95FF63F12F770BD00FCD7B6 /* MRNXTWriteIOMapCommand.h */,
+				C95FF64012F770BD00FCD7B6 /* MRNXTWriteIOMapCommand.m */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 				C9B692AA12F495E4001A8138 /* MRUSBDevicePipeDescriptor.h in Headers */,
 				C93FB1FB12F6177F00BA18F0 /* MRNXTReadIOMapCommand.h in Headers */,
 				C93FB20912F618E400BA18F0 /* MRNXTIOMapResponse.h in Headers */,
+				C95FF64112F770BD00FCD7B6 /* MRNXTWriteIOMapCommand.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +489,7 @@
 				C9B692AB12F495E4001A8138 /* MRUSBDevicePipeDescriptor.m in Sources */,
 				C93FB1FC12F6177F00BA18F0 /* MRNXTReadIOMapCommand.m in Sources */,
 				C93FB20A12F618E400BA18F0 /* MRNXTIOMapResponse.m in Sources */,
+				C95FF64212F770BD00FCD7B6 /* MRNXTWriteIOMapCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
