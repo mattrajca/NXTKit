@@ -8,9 +8,7 @@
 #import "MRNXTCommand.h"
 
 @interface MRNXTOpenWriteCommand : MRNXTCommand {
-  @private
-	NSString *_filename;
-	uint32_t _size;
+
 }
 
 @property (copy) NSString *filename;

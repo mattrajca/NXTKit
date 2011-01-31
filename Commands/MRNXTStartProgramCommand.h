@@ -8,8 +8,7 @@
 #import "MRNXTCommand.h"
 
 @interface MRNXTStartProgramCommand : MRNXTCommand {
-  @private
-	NSString *_filename;
+
 }
 
 @property (copy) NSString *filename;

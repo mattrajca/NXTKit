@@ -9,18 +9,18 @@
 
 @implementation MRNXTStartProgramCommand
 
-@synthesize filename = _filename;
+@synthesize filename;
 
 - (uint8_t)identifier {
 	return 0x0;
 }
 
 - (NSData *)data {
-	return [NSMutableData dataWithNXTFilename:_filename];
+	return [NSMutableData dataWithNXTFilename:filename];
 }
 
 - (void)dealloc {
-	[_filename release];
+	[filename release];
 	
 	[super dealloc];
 }

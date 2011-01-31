@@ -8,8 +8,7 @@
 #import "MRNXTHandleResponse.h"
 
 @interface MRNXTHandleSizeResponse : MRNXTHandleResponse {
-  @private
-	uint16_t _size;
+
 }
 
 @property (readonly) uint16_t size;

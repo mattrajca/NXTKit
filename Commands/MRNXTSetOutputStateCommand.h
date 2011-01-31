@@ -9,14 +9,7 @@
 #import "MRNXTConstants.h"
 
 @interface MRNXTSetOutputStateCommand : MRNXTCommand {
-  @private
-	NXTOutputPort port;
-	int8_t power;
-	NXTOutputMode outputMode;
-	NXTRegulationMode regulationMode;
-	int8_t turnRatio;
-	NXTRunState runState;
-	uint32_t tachoLimit;
+
 }
 
 @property (assign) NXTOutputPort port;

@@ -9,21 +9,20 @@
 
 @implementation MRNXTDeviceInfoResponse
 
-@synthesize brickName = _brickName;
-@synthesize freeSpace = _freeSpace;
+@synthesize brickName, freeSpace;
 
 - (void)parseBodyData:(NSData *)data {
 	char name[15];
 	[data getBytes:&name range:NSMakeRange(0, 15)];
 	
-	_brickName = [[NSString alloc] initWithUTF8String:name];
+	brickName = [[NSString alloc] initWithUTF8String:name];
 	
-	[data getBytes:&_freeSpace range:NSMakeRange(26, 4)];
-	_freeSpace = OSSwapLittleToHostInt32(_freeSpace);
+	[data getBytes:&freeSpace range:NSMakeRange(26, 4)];
+	freeSpace = OSSwapLittleToHostInt32(freeSpace);
 }
 
 - (void)dealloc {
-	[_brickName release];
+	[brickName release];
 	
 	[super dealloc];
 }

@@ -9,7 +9,7 @@
 
 @implementation MRNXTDeleteCommand
 
-@synthesize filename = _filename;
+@synthesize filename;
 
 - (NXTCommandType)type {
 	return NXTCommandTypeSystem;
@@ -20,11 +20,11 @@
 }
 
 - (NSData *)data {
-	return [NSMutableData dataWithNXTFilename:_filename];
+	return [NSMutableData dataWithNXTFilename:filename];
 }
 
 - (void)dealloc {
-	[_filename release];
+	[filename release];
 	
 	[super dealloc];
 }

@@ -11,7 +11,7 @@
 
 @implementation MRNXTOpenReadCommand
 
-@synthesize filename = _filename;
+@synthesize filename;
 
 - (Class)responseClass {
 	return [MRNXTHandleSizeResponse class];
@@ -26,11 +26,11 @@
 }
 
 - (NSData *)data {
-	return [NSMutableData dataWithNXTFilename:_filename];
+	return [NSMutableData dataWithNXTFilename:filename];
 }
 
 - (void)dealloc {
-	[_filename release];
+	[filename release];
 	
 	[super dealloc];
 }

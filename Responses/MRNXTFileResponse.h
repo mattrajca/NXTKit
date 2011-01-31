@@ -8,10 +8,7 @@
 #import "MRNXTResponse.h"
 
 @interface MRNXTFileResponse : MRNXTResponse {
-  @private
-	uint8_t _handle;
-	NSString *_filename;
-	uint32_t _size;
+
 }
 
 @property (readonly) uint8_t handle;

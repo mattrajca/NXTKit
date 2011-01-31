@@ -8,9 +8,7 @@
 #import "MRNXTResponse.h"
 
 @interface MRNXTDeviceInfoResponse : MRNXTResponse {
-  @private
-	NSString *_brickName;
-	uint32_t _freeSpace;
+
 }
 
 @property (readonly) NSString *brickName;

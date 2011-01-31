@@ -11,8 +11,7 @@
 
 @implementation MRNXTReadCommand
 
-@synthesize handle = _handle;
-@synthesize bytesToRead = _bytesToRead;
+@synthesize handle, bytesToRead;
 
 - (Class)responseClass {
 	return [MRNXTDataResponse class];
@@ -28,9 +27,9 @@
 
 - (NSData *)data {
 	NSMutableData *data = [[NSMutableData alloc] init];
-	[data appendBytes:&_handle length:sizeof(_handle)];
+	[data appendBytes:&handle length:sizeof(handle)];
 	
-	uint16_t size = OSSwapHostToLittleInt16(_bytesToRead);
+	uint16_t size = OSSwapHostToLittleInt16(bytesToRead);
 	[data appendBytes:&size length:sizeof(size)];
 	
 	return [data autorelease];

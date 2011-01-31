@@ -11,7 +11,7 @@
 
 @implementation MRNXTFindNextCommand
 
-@synthesize handle = _handle;
+@synthesize handle;
 
 - (Class)responseClass {
 	return [MRNXTFileResponse class];
@@ -26,7 +26,7 @@
 }
 
 - (NSData *)data {
-	return [NSData dataWithBytes:&_handle length:sizeof(_handle)];
+	return [NSData dataWithBytes:&handle length:sizeof(handle)];
 }
 
 @end

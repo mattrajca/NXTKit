@@ -9,10 +9,10 @@
 
 @implementation MRNXTHandleResponse
 
-@synthesize handle = _handle;
+@synthesize handle;
 
 - (void)parseBodyData:(NSData *)data {
-	[data getBytes:&_handle range:NSMakeRange(0, 1)];
+	[data getBytes:&handle range:NSMakeRange(0, 1)];
 }
 
 @end

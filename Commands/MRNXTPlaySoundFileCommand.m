@@ -9,8 +9,7 @@
 
 @implementation MRNXTPlaySoundFileCommand
 
-@synthesize loop = _loop;
-@synthesize filename = _filename;
+@synthesize loop, filename;
 
 - (uint8_t)identifier {
 	return 0x02;
@@ -18,14 +17,14 @@
 
 - (NSData *)data {
 	NSMutableData *data = [NSMutableData data];
-	[data appendBytes:&_loop length:1];
-	[data mr_appendNXTFilename:_filename];
+	[data appendBytes:&loop length:1];
+	[data mr_appendNXTFilename:filename];
 	
 	return data;
 }
 
 - (void)dealloc {
-	[_filename release];
+	[filename release];
 	
 	[super dealloc];
 }

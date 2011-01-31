@@ -9,13 +9,13 @@
 
 @implementation MRNXTHandleSizeResponse
 
-@synthesize size = _size;
+@synthesize size;
 
 - (void)parseBodyData:(NSData *)data {
 	[super parseBodyData:data];
 	
-	[data getBytes:&_size range:NSMakeRange(1, 2)];
-	_size = OSSwapLittleToHostInt16(_size);
+	[data getBytes:&size range:NSMakeRange(1, 2)];
+	size = OSSwapLittleToHostInt16(size);
 }
 
 @end
