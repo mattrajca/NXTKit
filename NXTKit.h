@@ -19,6 +19,7 @@
 #import <NXTKit/MRNXTOpenWriteCommand.h>
 #import <NXTKit/MRNXTPlaySoundFileCommand.h>
 #import <NXTKit/MRNXTReadCommand.h>
+#import <NXTKit/MRNXTReadIOMapCommand.h>
 #import <NXTKit/MRNXTResetMotorPositionCommand.h>
 #import <NXTKit/MRNXTSetOutputStateCommand.h>
 #import <NXTKit/MRNXTStartProgramCommand.h>
@@ -29,6 +30,7 @@
 #import <NXTKit/MRNXTFileResponse.h>
 #import <NXTKit/MRNXTHandleResponse.h>
 #import <NXTKit/MRNXTHandleSizeResponse.h>
+#import <NXTKit/MRNXTIOMapResponse.h>
 
 #import <NXTKit/MRBluetoothDeviceTransport.h>
 #import <NXTKit/MRDevice.h>

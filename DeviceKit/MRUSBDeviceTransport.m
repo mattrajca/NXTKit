@@ -290,7 +290,7 @@ static char readBuffer[READ_BUFFER_LEN];
 		_interface = NULL;
 	}
 	
-	if (_interface) {
+	if (_device) {
 		(*_device)->USBDeviceClose(_device);
 		(*_device)->Release(_device);
 		_device = NULL;
