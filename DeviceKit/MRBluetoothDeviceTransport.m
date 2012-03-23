@@ -27,7 +27,7 @@
 	
 	self = [super init];
 	if (self) {
-		_bluetoothDevice = [[IOBluetoothDevice withAddress:address] retain];
+		_bluetoothDevice = [[IOBluetoothDevice deviceWithAddress:address] retain];
 	}
 	return self;
 }

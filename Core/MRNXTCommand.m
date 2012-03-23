@@ -43,7 +43,7 @@
 
 - (NSString *)description {
 	return [NSString stringWithFormat:@"MRNXTCommand [type=%d, identifier=%d]",
-			[self type], [self identifier], nil];
+			[self type], [self identifier]];
 }
 
 - (void)dealloc {
