@@ -55,12 +55,12 @@ Example
         [comm release];
     }
 
-See the [NXT-Browser](https://github.com/mattrajca/NXT-Browser) project for a full, working sample which utilizes NXTKit.
+See the [NXT-Browser](https://github.com/mattrajca/NXT-Browser) project for a full, working sample that utilizes NXTKit.
 
 About Filenames
 ---------------
 
-All file names on the NXT can have a maximum length of 19 characters (15.3), and will be truncated when necessary. The following wildcards are also accepted:
+All filenames on the NXT can have a maximum length of 19 characters (15.3), and will be truncated when necessary. The following wildcards are also accepted:
 
     - Filename.Extension
     - *.(Extension)
