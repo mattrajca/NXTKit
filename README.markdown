@@ -7,7 +7,7 @@ Basic Usage
 -----------
 
 1. Check if a NXT brick is connected via USB. The `MRUSBDeviceEntry` class abstracts much of this. If a USB device can't be found, display an instance of `IOBluetoothDeviceSelectorController` (part of the IOBluetoothUI framework).
-2. Construct a new `MRBluetoothDeviceTransport` or `MRUSBDeviceTransport`. Bluetooth should only be used when wireless connectivity is key or when USB isn't available, since it uses more power.
+2. Construct a new `MRBluetoothDeviceTransport` or `MRUSBDeviceTransport`. Bluetooth should only be used when wireless connectivity is key or when USB isn't available, considering it uses more power.
 3. Initialize an instance of `MRNXTDevice` with the device transport created in the previous step. Register yourself as a delegate of the device, and call `- open:` .
 4. Once a Bluetooth or USB connection is established, you can enqueue subclasses of `MRNXTCommand` onto the device work queue. If the specified response callback is not `NULL`, an instance of `MRNXTResponse` will be passed to the callback block. Commands execute serially in FIFO order.
 
