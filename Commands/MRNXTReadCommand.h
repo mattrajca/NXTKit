@@ -8,7 +8,9 @@
 #import "MRNXTCommand.h"
 
 @interface MRNXTReadCommand : MRNXTCommand {
-
+@private
+    uint8_t handle;
+    uint16_t bytesToRead; // max size: 64 bytes
 }
 
 @property (assign) uint8_t handle;

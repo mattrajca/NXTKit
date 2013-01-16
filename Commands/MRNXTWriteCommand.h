@@ -8,7 +8,9 @@
 #import "MRNXTCommand.h"
 
 @interface MRNXTWriteCommand : MRNXTCommand {
-
+@private
+    uint8_t handle;
+    NSData *data; // max size: 64 bytes
 }
 
 @property (assign) uint8_t handle;
