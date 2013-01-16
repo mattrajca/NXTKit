@@ -14,13 +14,13 @@
 @interface MRDevice : NSObject < MRDeviceTransportDelegate > {
   @private
 	MRDeviceTransport *_transport;
-	__weak id < MRDeviceDelegate > _delegate;
+    id < MRDeviceDelegate > _delegate;
 }
 
 @property (readonly, getter=isOpen) BOOL open;
 @property (readonly) MRDeviceTransport *transport;
 
-@property (assign) __weak id < MRDeviceDelegate > delegate;
+@property (assign) id < MRDeviceDelegate > delegate;
 
 - (id)initWithTransport:(MRDeviceTransport *)aTransport;
 
