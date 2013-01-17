@@ -8,7 +8,10 @@
 #import "MRNXTResponse.h"
 
 @interface MRNXTIOMapResponse : MRNXTResponse {
-
+@private
+    uint32_t moduleID;
+    uint16_t bytesRead;
+    NSData *contents;
 }
 
 @property (readonly) uint32_t moduleID;

@@ -9,7 +9,9 @@
 #import "MRNXTConstants.h"
 
 @interface MRNXTResetMotorPositionCommand : MRNXTCommand {
-
+@private
+    NXTOutputPort port;
+    BOOL relative;
 }
 
 @property (assign) NXTOutputPort port;

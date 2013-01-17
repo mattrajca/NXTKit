@@ -8,7 +8,9 @@
 #import "MRNXTCommand.h"
 
 @interface MRNXTPlaySoundFileCommand : MRNXTCommand {
-
+@private
+    BOOL loop;
+    NSString *filename;
 }
 
 @property (assign) BOOL loop;

@@ -8,7 +8,8 @@
 #import "MRNXTResponse.h"
 
 @interface MRNXTHandleResponse : MRNXTResponse {
-
+@private
+    uint8_t handle;
 }
 
 @property (readonly) uint8_t handle;

@@ -8,7 +8,8 @@
 #import "MRNXTCommand.h"
 
 @interface MRNXTDeleteCommand : MRNXTCommand {
-
+@private
+    NSString *filename;
 }
 
 @property (copy) NSString *filename;

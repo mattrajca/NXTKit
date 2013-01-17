@@ -10,11 +10,11 @@
 @interface MRDeviceTransport : NSObject {
   @private
 	BOOL _open;
-	__weak id < MRDeviceTransportDelegate > _delegate;
+    id < MRDeviceTransportDelegate > _delegate;
 }
 
 @property (readonly, getter=isOpen) BOOL open;
-@property (assign) __weak id < MRDeviceTransportDelegate > delegate;
+@property (assign) id < MRDeviceTransportDelegate > delegate;
 
 - (BOOL)open:(NSError **)outError;
 - (void)close;
