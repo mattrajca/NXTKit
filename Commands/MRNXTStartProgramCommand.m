@@ -9,14 +9,12 @@
 
 @implementation MRNXTStartProgramCommand
 
-@synthesize filename;
-
 - (uint8_t)identifier {
 	return 0x0;
 }
 
 - (NSData *)data {
-	return [NSMutableData dataWithNXTFilename:filename];
+	return [NSMutableData dataWithNXTFilename:_filename];
 }
 
 @end

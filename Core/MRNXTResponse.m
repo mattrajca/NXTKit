@@ -16,17 +16,16 @@
 
 @implementation MRNXTResponse
 
-@synthesize status = _status;
+- (instancetype)initWithData:(NSData *)data {
+	if (!(self = [super init]))
+		return nil;
 
-- (id)initWithData:(NSData *)data {
-	self = [super init];
-	if (self) {
-		[self parseHeaderData:[data subdataWithRange:NSMakeRange(2, 3)]];
-		
-		if ([data length] > 3) {
-			[self parseBodyData:[data subdataWithRange:NSMakeRange(5, [data length] - 5)]];
-		}
+	[self parseHeaderData:[data subdataWithRange:NSMakeRange(2, 3)]];
+	
+	if (data.length > 3) {
+		[self parseBodyData:[data subdataWithRange:NSMakeRange(5, data.length - 5)]];
 	}
+
 	return self;
 }
 

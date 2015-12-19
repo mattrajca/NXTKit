@@ -7,8 +7,6 @@
 
 #import "MRNXTCommand.h"
 
-@interface MRNXTGetDeviceInfoCommand : MRNXTCommand {
-
-}
+@interface MRNXTGetDeviceInfoCommand : MRNXTCommand
 
 @end

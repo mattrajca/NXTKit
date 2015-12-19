@@ -9,17 +9,17 @@
 
 @implementation NSMutableData (NXT)
 
-+ (id)dataWithNXTFilename:(NSString *)filename {
-	NSMutableData *data = [[NSMutableData alloc] init];
++ (instancetype)dataWithNXTFilename:(NSString *)filename {
+	NSMutableData *data = [[self alloc] init];
 	[data mr_appendNXTFilename:filename];
 	
 	return data;
 }
 
 - (void)mr_appendNXTFilename:(NSString *)filename {
-	NSString *fn = [filename length] > 19 ? [filename substringToIndex:20] : filename;
+	NSString *fn = filename.length > 19 ? [filename substringToIndex:20] : filename;
 	
-	[self appendBytes:[fn UTF8String] length:20];
+	[self appendBytes:fn.UTF8String length:20];
 }
 
 @end

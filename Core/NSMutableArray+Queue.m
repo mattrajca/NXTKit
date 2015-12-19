@@ -14,7 +14,7 @@
 }
 
 - (id)mr_pop {
-	if (![self count]) {
+	if (!self.count) {
 		return nil;
 	}
 	

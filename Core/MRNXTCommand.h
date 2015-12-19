@@ -9,10 +9,7 @@
 
 typedef void (^MRNXTResponseBlock) (id response);
 
-@interface MRNXTCommand : NSObject {
-  @private
-	MRNXTResponseBlock _responseBlock;
-}
+@interface MRNXTCommand : NSObject
 
 @property (copy) MRNXTResponseBlock responseBlock;
 

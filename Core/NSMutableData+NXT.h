@@ -7,7 +7,7 @@
 
 @interface NSMutableData (NXT)
 
-+ (id)dataWithNXTFilename:(NSString *)filename;
++ (instancetype)dataWithNXTFilename:(NSString *)filename;
 
 - (void)mr_appendNXTFilename:(NSString *)filename;
 

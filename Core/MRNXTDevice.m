@@ -22,7 +22,10 @@
 @end
 
 
-@implementation MRNXTDevice
+@implementation MRNXTDevice {
+	NSMutableArray *_queue;
+	MRNXTCommand *_currentCommand;
+}
 
 - (id)initWithTransport:(MRDeviceTransport *)aTransport {
 	self = [super initWithTransport:aTransport];

@@ -7,9 +7,7 @@
 
 #import "MRNXTCommand.h"
 
-@interface MRNXTCloseCommand : MRNXTCommand {
-
-}
+@interface MRNXTCloseCommand : MRNXTCommand
 
 @property (assign) uint8_t handle;
 

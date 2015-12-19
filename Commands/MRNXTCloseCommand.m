@@ -9,8 +9,6 @@
 
 @implementation MRNXTCloseCommand
 
-@synthesize handle;
-
 - (NXTCommandType)type {
 	return NXTCommandTypeSystem;
 }
@@ -20,7 +18,7 @@
 }
 
 - (NSData *)data {
-	return [NSData dataWithBytes:&handle length:sizeof(handle)];
+	return [NSData dataWithBytes:&_handle length:sizeof(_handle)];
 }
 
 @end

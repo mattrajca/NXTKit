@@ -9,16 +9,14 @@
 
 @implementation MRNXTResetMotorPositionCommand
 
-@synthesize port, relative;
-
 - (uint8_t)identifier {
 	return 0x0A;
 }
 
 - (NSData *)data {
 	NSMutableData *data = [[NSMutableData alloc] init];
-	[data appendBytes:&port length:sizeof(port)];
-	[data appendBytes:&relative length:1];
+	[data appendBytes:&_port length:sizeof(_port)];
+	[data appendBytes:&_relative length:1];
 	
 	return data;
 }

@@ -7,9 +7,7 @@
 
 #import "MRNXTCommand.h"
 
-@interface MRNXTReadIOMapCommand : MRNXTCommand {
-
-}
+@interface MRNXTReadIOMapCommand : MRNXTCommand
 
 @property (assign) uint32_t moduleID;
 @property (assign) uint16_t offset;

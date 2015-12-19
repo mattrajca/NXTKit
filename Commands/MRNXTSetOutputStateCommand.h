@@ -8,9 +8,7 @@
 #import "MRNXTCommand.h"
 #import "MRNXTConstants.h"
 
-@interface MRNXTSetOutputStateCommand : MRNXTCommand {
-
-}
+@interface MRNXTSetOutputStateCommand : MRNXTCommand
 
 @property (assign) NXTOutputPort port;
 @property (assign) int8_t power;

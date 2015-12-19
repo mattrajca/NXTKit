@@ -11,8 +11,6 @@
 
 @implementation MRNXTCommand
 
-@synthesize responseBlock = _responseBlock;
-
 - (Class)responseClass {
 	return [MRNXTResponse class];
 }
@@ -22,7 +20,7 @@
 }
 
 - (uint8_t)telegramType {
-	if ([self type] == NXTCommandTypeDirect) {
+	if (self.type == NXTCommandTypeDirect) {
 		return 0x0;
 	}
 	
@@ -43,7 +41,7 @@
 
 - (NSString *)description {
 	return [NSString stringWithFormat:@"MRNXTCommand [type=%d, identifier=%d]",
-			[self type], [self identifier]];
+			self.type, self.identifier];
 }
 
 @end

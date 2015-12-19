@@ -11,8 +11,6 @@
 
 @implementation MRNXTOpenWriteCommand
 
-@synthesize filename, size;
-
 - (Class)responseClass {
 	return [MRNXTHandleResponse class];
 }
@@ -27,9 +25,9 @@
 
 - (NSData *)data {
 	NSMutableData *data = [[NSMutableData alloc] init];
-	[data mr_appendNXTFilename:filename];
+	[data mr_appendNXTFilename:_filename];
 	
-	uint32_t n_size = OSSwapHostToLittleInt32(size);
+	uint32_t n_size = OSSwapHostToLittleInt32(_size);
 	[data appendBytes:&n_size length:sizeof(n_size)];
 	
 	return data;

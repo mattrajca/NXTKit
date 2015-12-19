@@ -7,14 +7,11 @@
 
 #import "MRNXTConstants.h"
 
-@interface MRNXTResponse : NSObject {
-  @private
-	NXTStatus _status;
-}
+@interface MRNXTResponse : NSObject
 
 @property (readonly) NXTStatus status;
 
-- (id)initWithData:(NSData *)data; // designated initializer
+- (instancetype)initWithData:(NSData *)data; // designated initializer
 
 - (void)parseBodyData:(NSData *)data;
 

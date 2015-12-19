@@ -11,8 +11,6 @@
 
 @implementation MRNXTReadIOMapCommand
 
-@synthesize moduleID, offset, bytesToRead;
-
 - (Class)responseClass {
 	return [MRNXTIOMapResponse class];
 }
@@ -28,13 +26,13 @@
 - (NSData *)data {
 	NSMutableData *data = [[NSMutableData alloc] init];
 	
-	uint32_t n_moduleID = OSSwapHostToLittleInt32(moduleID);
+	uint32_t n_moduleID = OSSwapHostToLittleInt32(_moduleID);
 	[data appendBytes:&n_moduleID length:sizeof(n_moduleID)];
 	
-	uint16_t n_offset = OSSwapHostToLittleInt16(offset);
+	uint16_t n_offset = OSSwapHostToLittleInt16(_offset);
 	[data appendBytes:&n_offset length:sizeof(n_offset)];
 	
-	uint16_t n_bytesToRead = OSSwapHostToLittleInt16(bytesToRead);
+	uint16_t n_bytesToRead = OSSwapHostToLittleInt16(_bytesToRead);
 	[data appendBytes:&n_bytesToRead length:sizeof(n_bytesToRead)];
 	
 	return data;

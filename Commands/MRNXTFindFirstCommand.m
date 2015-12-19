@@ -11,8 +11,6 @@
 
 @implementation MRNXTFindFirstCommand
 
-@synthesize filename;
-
 - (Class)responseClass {
 	return [MRNXTFileResponse class];
 }
@@ -26,7 +24,7 @@
 }
 
 - (NSData *)data {
-	return [NSMutableData dataWithNXTFilename:filename];
+	return [NSMutableData dataWithNXTFilename:_filename];
 }
 
 @end
