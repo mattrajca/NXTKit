@@ -11,8 +11,6 @@
 
 @implementation MRNXTWriteCommand
 
-@synthesize handle, data;
-
 - (Class)responseClass {
 	return [MRNXTHandleSizeResponse class];
 }
@@ -27,8 +25,8 @@
 
 - (NSData *)data {
 	NSMutableData *cData = [[NSMutableData alloc] init];
-	[cData appendBytes:&handle length:sizeof(handle)];
-	[cData appendData:data];
+	[cData appendBytes:&_handle length:sizeof(_handle)];
+	[cData appendData:_contents];
 	
 	return cData;
 }

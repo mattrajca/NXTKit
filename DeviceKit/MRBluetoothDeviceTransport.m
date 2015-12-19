@@ -14,15 +14,15 @@
 	IOBluetoothRFCOMMChannel *_channel;
 }
 
-+ (id)deviceWithAddress:(const BluetoothDeviceAddress *)address {
++ (instancetype)deviceWithAddress:(const BluetoothDeviceAddress *)address {
 	return [[[self class] alloc] initWithAddress:address];
 }
 
-+ (id)deviceWithBluetoothDevice:(IOBluetoothDevice *)device {
++ (instancetype)deviceWithBluetoothDevice:(IOBluetoothDevice *)device {
 	return [[[self class] alloc] initWithBluetoothDevice:device];
 }
 
-- (id)initWithAddress:(const BluetoothDeviceAddress *)address {
+- (instancetype)initWithAddress:(const BluetoothDeviceAddress *)address {
 	NSParameterAssert(address != nil);
 	
 	self = [super init];
@@ -32,7 +32,7 @@
 	return self;
 }
 
-- (id)initWithBluetoothDevice:(IOBluetoothDevice *)device {
+- (instancetype)initWithBluetoothDevice:(IOBluetoothDevice *)device {
 	NSParameterAssert(device != nil);
 	
 	self = [super init];

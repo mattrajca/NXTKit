@@ -16,10 +16,10 @@ typedef struct BluetoothDeviceAddress BluetoothDeviceAddress;
 
 @property (readonly) IOBluetoothDevice *bluetoothDevice; /* use with care */
 
-+ (id)deviceWithAddress:(const BluetoothDeviceAddress *)address;
-+ (id)deviceWithBluetoothDevice:(IOBluetoothDevice *)device;
++ (instancetype)deviceWithAddress:(const BluetoothDeviceAddress *)address;
++ (instancetype)deviceWithBluetoothDevice:(IOBluetoothDevice *)device;
 
-- (id)initWithAddress:(const BluetoothDeviceAddress *)address;
-- (id)initWithBluetoothDevice:(IOBluetoothDevice *)device;
+- (instancetype)initWithAddress:(const BluetoothDeviceAddress *)address;
+- (instancetype)initWithBluetoothDevice:(IOBluetoothDevice *)device;
 
 @end

@@ -9,16 +9,9 @@
 
 #import <IOKit/usb/IOUSBLib.h>
 
-@interface MRUSBDeviceEntry ()
-
-+ (CFMutableDictionaryRef)newMatchingDictionaryForProductID:(int)pid vendorID:(int)vid;
-
-@end
-
-
-@implementation MRUSBDeviceEntry
-
-@synthesize service = _service;
+@implementation MRUSBDeviceEntry {
+	io_service_t _service;
+}
 
 static void MatchedService (void *refcon, io_iterator_t iterator);
 

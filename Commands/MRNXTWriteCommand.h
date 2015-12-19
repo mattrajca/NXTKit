@@ -10,6 +10,6 @@
 @interface MRNXTWriteCommand : MRNXTCommand
 
 @property (assign) uint8_t handle;
-@property NSData *data; // max size: 64 bytes
+@property NSData *contents; // max size: 64 bytes
 
 @end

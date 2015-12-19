@@ -24,11 +24,11 @@ static void DeviceNotification (void *refCon, io_service_t service, natural_t me
 
 static char readBuffer[READ_BUFFER_LEN];
 
-- (id)init {
+- (instancetype)init {
 	return [self initWithDeviceEntry:nil desiredPipes:nil];
 }
 
-- (id)initWithDeviceEntry:(MRUSBDeviceEntry *)entry desiredPipes:(NSArray *)descs {
+- (instancetype)initWithDeviceEntry:(MRUSBDeviceEntry *)entry desiredPipes:(NSArray *)descs {
 	NSParameterAssert (entry != nil);
 	NSParameterAssert (descs != nil);
 	
@@ -46,8 +46,7 @@ static char readBuffer[READ_BUFFER_LEN];
 	return self;
 }
 
-#pragma mark -
-#pragma mark Device Setup
+#pragma mark - Device Setup
 
 - (BOOL)setupDevice:(NSError **)outError {
 	IOCFPlugInInterface **plugInInterface = NULL;
@@ -250,8 +249,7 @@ static char readBuffer[READ_BUFFER_LEN];
 									 &DeviceNotification, (__bridge void *)self, &_registeredNotification);
 }
 
-#pragma mark -
-#pragma mark Core Transport
+#pragma mark - Core Transport
 
 - (BOOL)open:(NSError **)outError {
 	if (![self setupDevice:outError])
@@ -361,8 +359,7 @@ static char readBuffer[READ_BUFFER_LEN];
 	return YES;
 }
 
-#pragma mark -
-#pragma mark Utility
+#pragma mark - Utility
 
 - (NSArray *)pipesForDirection:(MRUSBTransferDirection)direction {
 	return [_pipes objectForKey:[NSNumber numberWithInt:direction]];

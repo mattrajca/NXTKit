@@ -9,9 +9,6 @@
 
 @implementation MRDeviceTransport
 
-@synthesize open = _open;
-@synthesize delegate = _delegate;
-
 - (BOOL)open:(NSError **)outError {
 	@throw [NSException exceptionWithName:NSInternalInconsistencyException
 								   reason:@"'open' must be overriden"

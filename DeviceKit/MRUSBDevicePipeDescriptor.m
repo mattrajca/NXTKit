@@ -9,9 +9,6 @@
 
 @implementation MRUSBDevicePipeDescriptor
 
-@synthesize type = _type;
-@synthesize direction = _direction;
-
 + (id)pipeDescriptorWithTransferType:(MRUSBTransferType)type direction:(MRUSBTransferDirection)dir {
 	return [[[self class] alloc] initWithTransferType:type direction:dir];
 }

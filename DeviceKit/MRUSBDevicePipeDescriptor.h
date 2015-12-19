@@ -22,11 +22,7 @@ typedef enum {
 	MRUSBTransferDirectionAny = kUSBAnyDirn
 } MRUSBTransferDirection;
 
-@interface MRUSBDevicePipeDescriptor : NSObject {
-  @private
-	MRUSBTransferType _type;
-	MRUSBTransferDirection _direction;
-}
+@interface MRUSBDevicePipeDescriptor : NSObject
 
 @property (readonly) MRUSBTransferType type;
 @property (readonly) MRUSBTransferDirection direction;

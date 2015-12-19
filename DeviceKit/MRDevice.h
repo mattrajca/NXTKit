@@ -22,7 +22,7 @@
 
 @property (weak) id < MRDeviceDelegate > delegate;
 
-- (id)initWithTransport:(MRDeviceTransport *)aTransport;
+- (instancetype)initWithTransport:(MRDeviceTransport *)aTransport;
 
 - (BOOL)open:(NSError **)error;
 - (void)close;

@@ -11,10 +11,7 @@
 
 @dynamic open;
 
-@synthesize transport = _transport;
-@synthesize delegate = _delegate;
-
-- (id)initWithTransport:(MRDeviceTransport *)aTransport {
+- (instancetype)initWithTransport:(MRDeviceTransport *)aTransport {
 	NSParameterAssert(aTransport != nil);
 	
 	self = [super init];

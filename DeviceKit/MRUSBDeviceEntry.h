@@ -12,10 +12,7 @@
 typedef void (^MRUSBDeviceEntryAdded) (MRUSBDeviceEntry *entry);
 typedef void (^MRUSBDeviceEntryRemoved) (MRUSBDeviceEntry *entry);
 
-@interface MRUSBDeviceEntry : NSObject {
-  @private
-	io_service_t _service;
-}
+@interface MRUSBDeviceEntry : NSObject
 
 @property (readonly) io_service_t service;
 

@@ -24,7 +24,7 @@
 	NSDictionary *_pipes;
 }
 
-- (id)initWithDeviceEntry:(MRUSBDeviceEntry *)entry desiredPipes:(NSArray *)descs;
+- (instancetype)initWithDeviceEntry:(MRUSBDeviceEntry *)entry desiredPipes:(NSArray *)descs;
 
 - (NSArray *)pipesForDirection:(MRUSBTransferDirection)direction;
 
