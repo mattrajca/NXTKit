@@ -7,9 +7,7 @@
 
 #import "MRNXTResponse.h"
 
-@interface MRNXTIOMapResponse : MRNXTResponse {
-
-}
+@interface MRNXTIOMapResponse : MRNXTResponse
 
 @property (readonly) uint32_t moduleID;
 @property (readonly) uint16_t bytesRead;

@@ -9,12 +9,10 @@
 
 @implementation MRNXTDataResponse
 
-@synthesize data = _data;
-
 - (void)parseBodyData:(NSData *)data {
 	[super parseBodyData:data];
 	
-	_data = [data subdataWithRange:NSMakeRange(3, [data length] - 3)];
+	_data = [data subdataWithRange:NSMakeRange(3, data.length - 3)];
 }
 
 @end

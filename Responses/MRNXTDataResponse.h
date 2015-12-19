@@ -7,9 +7,7 @@
 
 #import "MRNXTHandleSizeResponse.h"
 
-@interface MRNXTDataResponse : MRNXTHandleSizeResponse {
-
-}
+@interface MRNXTDataResponse : MRNXTHandleSizeResponse
 
 @property (readonly) NSData *data;
 

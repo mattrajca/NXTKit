@@ -7,9 +7,7 @@
 
 #import "MRNXTResponse.h"
 
-@interface MRNXTFileResponse : MRNXTResponse {
-
-}
+@interface MRNXTFileResponse : MRNXTResponse
 
 @property (readonly) uint8_t handle;
 @property (readonly) NSString *filename;

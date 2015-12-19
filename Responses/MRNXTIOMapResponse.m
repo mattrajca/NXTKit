@@ -9,16 +9,14 @@
 
 @implementation MRNXTIOMapResponse
 
-@synthesize moduleID, bytesRead, contents;
-
 - (void)parseBodyData:(NSData *)data {
-	[data getBytes:&moduleID range:NSMakeRange(0, 4)];
-	moduleID = OSSwapLittleToHostInt32(moduleID);
+	[data getBytes:&_moduleID range:NSMakeRange(0, 4)];
+	_moduleID = OSSwapLittleToHostInt32(_moduleID);
 	
-	[data getBytes:&bytesRead range:NSMakeRange(4, 2)];
-	bytesRead = OSSwapLittleToHostInt16(bytesRead);
+	[data getBytes:&_bytesRead range:NSMakeRange(4, 2)];
+	_bytesRead = OSSwapLittleToHostInt16(_bytesRead);
 	
-	contents = [data subdataWithRange:NSMakeRange(6, bytesRead)];
+	_contents = [data subdataWithRange:NSMakeRange(6, _bytesRead)];
 }
 
 @end
