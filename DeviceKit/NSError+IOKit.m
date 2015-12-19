@@ -12,9 +12,9 @@ NSString *const IOKitErrorDomain = @"com.MattRajca.DeviceKit.IOKit";
 @implementation NSError (IOKit)
 
 + (id)IOKitErrorWithReturnCode:(IOReturn)code {
-	return [[[[self class] alloc] initWithDomain:IOKitErrorDomain
+	return [[[self class] alloc] initWithDomain:IOKitErrorDomain
 											code:code
-										userInfo:nil] autorelease];
+										userInfo:nil];
 }
 
 @end

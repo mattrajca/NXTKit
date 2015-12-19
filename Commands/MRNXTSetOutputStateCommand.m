@@ -25,7 +25,7 @@
 	[data appendBytes:&runState length:sizeof(runState)];
 	[data appendBytes:&tachoLimit length:sizeof(tachoLimit)];
 	
-	return [data autorelease];
+	return data;
 }
 
 @end

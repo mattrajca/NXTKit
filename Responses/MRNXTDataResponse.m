@@ -14,13 +14,7 @@
 - (void)parseBodyData:(NSData *)data {
 	[super parseBodyData:data];
 	
-	_data = [[data subdataWithRange:NSMakeRange(3, [data length] - 3)] retain];
-}
-
-- (void)dealloc {
-	[_data release];
-	
-	[super dealloc];
+	_data = [data subdataWithRange:NSMakeRange(3, [data length] - 3)];
 }
 
 @end

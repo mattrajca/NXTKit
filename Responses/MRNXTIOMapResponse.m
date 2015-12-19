@@ -18,13 +18,7 @@
 	[data getBytes:&bytesRead range:NSMakeRange(4, 2)];
 	bytesRead = OSSwapLittleToHostInt16(bytesRead);
 	
-	contents = [[data subdataWithRange:NSMakeRange(6, bytesRead)] retain];
-}
-
-- (void)dealloc {
-	[contents release];
-	
-	[super dealloc];
+	contents = [data subdataWithRange:NSMakeRange(6, bytesRead)];
 }
 
 @end

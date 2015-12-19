@@ -12,11 +12,7 @@ typedef struct BluetoothDeviceAddress BluetoothDeviceAddress;
 
 /* supports RFCOMM communication */
 
-@interface MRBluetoothDeviceTransport : MRDeviceTransport {
-  @private
-	IOBluetoothDevice *_bluetoothDevice;
-	IOBluetoothRFCOMMChannel *_channel;
-}
+@interface MRBluetoothDeviceTransport : MRDeviceTransport
 
 @property (readonly) IOBluetoothDevice *bluetoothDevice; /* use with care */
 

@@ -19,7 +19,7 @@
 	
 	self = [super init];
 	if (self) {
-		_transport = [aTransport retain];
+		_transport = aTransport;
 		_transport.delegate = self;
 	}
 	return self;
@@ -78,10 +78,6 @@
 
 - (void)dealloc {
 	[self close];
-	
-	[_transport release];
-	
-	[super dealloc];
 }
 
 @end

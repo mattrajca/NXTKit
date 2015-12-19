@@ -20,7 +20,7 @@
 	[data appendBytes:&port length:sizeof(port)];
 	[data appendBytes:&relative length:1];
 	
-	return [data autorelease];
+	return data;
 }
 
 @end

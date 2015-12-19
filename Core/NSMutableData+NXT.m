@@ -13,7 +13,7 @@
 	NSMutableData *data = [[NSMutableData alloc] init];
 	[data mr_appendNXTFilename:filename];
 	
-	return [data autorelease];
+	return data;
 }
 
 - (void)mr_appendNXTFilename:(NSString *)filename {

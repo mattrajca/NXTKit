@@ -37,7 +37,7 @@
 	uint16_t n_bytesToRead = OSSwapHostToLittleInt16(bytesToRead);
 	[data appendBytes:&n_bytesToRead length:sizeof(n_bytesToRead)];
 	
-	return [data autorelease];
+	return data;
 }
 
 @end

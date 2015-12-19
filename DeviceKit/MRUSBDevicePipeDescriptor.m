@@ -13,7 +13,7 @@
 @synthesize direction = _direction;
 
 + (id)pipeDescriptorWithTransferType:(MRUSBTransferType)type direction:(MRUSBTransferDirection)dir {
-	return [[[[self class] alloc] initWithTransferType:type direction:dir] autorelease];
+	return [[[self class] alloc] initWithTransferType:type direction:dir];
 }
 
 - (id)initWithTransferType:(MRUSBTransferType)type direction:(MRUSBTransferDirection)dir {

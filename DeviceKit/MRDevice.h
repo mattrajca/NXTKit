@@ -20,7 +20,7 @@
 @property (readonly, getter=isOpen) BOOL open;
 @property (readonly) MRDeviceTransport *transport;
 
-@property (assign) __weak id < MRDeviceDelegate > delegate;
+@property (weak) id < MRDeviceDelegate > delegate;
 
 - (id)initWithTransport:(MRDeviceTransport *)aTransport;
 

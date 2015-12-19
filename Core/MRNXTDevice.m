@@ -8,6 +8,7 @@
 #import "MRNXTDevice.h"
 
 #import "MRNXTCommand.h"
+#import "MRNXTResponse.h"
 #import "MRUSBDeviceTransport.h"
 #import "NSMutableArray+Queue.h"
 
@@ -43,7 +44,7 @@
 
 - (void)processQueue {
 	if ([_queue count] > 0 && !_currentCommand) {
-		_currentCommand = [[_queue mr_pop] retain];
+		_currentCommand = [_queue mr_pop];
 		
 		[self sendCurrentCommand];
 	}
@@ -70,8 +71,6 @@
 	if (![self.transport writeData:packet error:&error]) {
 		NSLog(@"Cannot write packet data: %@", error);
 	}
-	
-	[packet release];
 }
 
 - (void)wroteData {
@@ -109,21 +108,11 @@
 		
 		MRNXTResponse *resp = [[[_currentCommand responseClass] alloc] initWithData:fullData];
 		block(resp);
-		
-		[resp release];
 	}
-	
-	[_currentCommand release];
+
 	_currentCommand = nil;
 	
 	[self processQueue];
-}
-
-- (void)dealloc {
-	[_queue release];
-	[_currentCommand release];
-	
-	[super dealloc];
 }
 
 @end

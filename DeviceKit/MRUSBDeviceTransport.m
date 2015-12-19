@@ -34,24 +34,16 @@ static char readBuffer[READ_BUFFER_LEN];
 	
 	self = [super init];
 	if (self) {
-		_entry = [entry retain];
-		_pipeDescs = [descs retain];
-		
-		_pipes = [[NSDictionary dictionaryWithObjectsAndKeys:
-				   [NSMutableArray array], [NSNumber numberWithInt:MRUSBTransferDirectionIn],
-				   [NSMutableArray array], [NSNumber numberWithInt:MRUSBTransferDirectionOut],
-				   [NSMutableArray array], [NSNumber numberWithInt:MRUSBTransferDirectionNone],
-				   [NSMutableArray array], [NSNumber numberWithInt:MRUSBTransferDirectionAny], nil] retain];
+		_entry = entry;
+		_pipeDescs = descs;
+
+		_pipes = [NSDictionary dictionaryWithObjectsAndKeys:
+				  [NSMutableArray array], [NSNumber numberWithInt:MRUSBTransferDirectionIn],
+				  [NSMutableArray array], [NSNumber numberWithInt:MRUSBTransferDirectionOut],
+				  [NSMutableArray array], [NSNumber numberWithInt:MRUSBTransferDirectionNone],
+				  [NSMutableArray array], [NSNumber numberWithInt:MRUSBTransferDirectionAny], nil];
 	}
 	return self;
-}
-
-- (void)dealloc {
-	[_entry release];
-	[_pipeDescs release];
-	[_pipes release];
-	
-	[super dealloc];
 }
 
 #pragma mark -
@@ -255,7 +247,7 @@ static char readBuffer[READ_BUFFER_LEN];
 	}
 	
 	IOServiceAddInterestNotification(_notificationPort, _entry.service, kIOGeneralInterest,
-									 &DeviceNotification, self, &_registeredNotification);
+									 &DeviceNotification, (__bridge void *)self, &_registeredNotification);
 }
 
 #pragma mark -
@@ -326,7 +318,7 @@ static char readBuffer[READ_BUFFER_LEN];
 	UInt8 outNum = [[outPipes objectAtIndex:0] intValue]; // write to first out pipe for now
 	
 	result = (*_interface)->WritePipeAsync(_interface, outNum, (void *) [data bytes], [data length],
-										   &WriteCompletion, self);
+										   &WriteCompletion, (__bridge void *)self);
 	
 	if (result != kIOReturnSuccess) {
 		if (outError)
@@ -357,7 +349,7 @@ static char readBuffer[READ_BUFFER_LEN];
 	bzero(readBuffer, sizeof(readBuffer));
 	
 	result = (*_interface)->ReadPipeAsync(_interface, inNum, readBuffer,
-										  READ_BUFFER_LEN, &ReadCompletion, self);
+										  READ_BUFFER_LEN, &ReadCompletion, (__bridge void *)self);
 	
 	if (result != kIOReturnSuccess) {
 		if (outError)
@@ -389,19 +381,19 @@ static char readBuffer[READ_BUFFER_LEN];
 }
 
 static void ReadCompletion (void *refCon, IOReturn result, void *arg0) {
-	MRUSBDeviceTransport *self = (MRUSBDeviceTransport *) refCon;
+	MRUSBDeviceTransport *self = (__bridge MRUSBDeviceTransport *) refCon;
 	size_t bytesRead = (size_t) arg0;
 	
 	[self didReadBytesWithResult:result number:bytesRead];
 }
 
 static void WriteCompletion (void *refCon, IOReturn result, void *arg0) {
-	MRUSBDeviceTransport *self = (MRUSBDeviceTransport *) refCon;
+	MRUSBDeviceTransport *self = (__bridge MRUSBDeviceTransport *) refCon;
 	[self didWriteDataWithResult:result];
 }
 
 static void DeviceNotification (void *refCon, io_service_t service, natural_t messageType, void *messageArgument) {
-	MRUSBDeviceTransport *self = (MRUSBDeviceTransport *) refCon;
+	MRUSBDeviceTransport *self = (__bridge MRUSBDeviceTransport *) refCon;
 	
 	if (messageType == kIOMessageServiceIsTerminated) {
 		[self close];

@@ -30,13 +30,7 @@
 	[cData appendBytes:&handle length:sizeof(handle)];
 	[cData appendData:data];
 	
-	return [cData autorelease];
-}
-
-- (void)dealloc {
-	[data release];
-	
-	[super dealloc];
+	return cData;
 }
 
 @end

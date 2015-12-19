@@ -14,7 +14,7 @@
 }
 
 @property (readonly, getter=isOpen) BOOL open;
-@property (assign) __weak id < MRDeviceTransportDelegate > delegate;
+@property (weak) id < MRDeviceTransportDelegate > delegate;
 
 - (BOOL)open:(NSError **)outError;
 - (void)close;

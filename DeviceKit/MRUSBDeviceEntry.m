@@ -51,7 +51,6 @@ static void MatchedService (void *refcon, io_iterator_t iterator);
 		MRUSBDeviceEntry *entry = [[MRUSBDeviceEntry alloc] initWithService:device];
 		
 		[devices addObject:entry];
-		[entry release];
 	}
 	
 	IOObjectRelease(iterator);
@@ -95,14 +94,8 @@ static void MatchedService (void *refcon, io_iterator_t iterator) {
 	return self;
 }
 
-- (void)finalize {
-	IOObjectRelease(_service);
-	[super finalize];
-}
-
 - (void)dealloc {
 	IOObjectRelease(_service);
-	[super dealloc];
 }
 
 @end

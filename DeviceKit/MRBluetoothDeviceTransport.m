@@ -10,16 +10,16 @@
 #import <IOBluetooth/IOBluetooth.h>
 #import "NSError+IOKit.h"
 
-@implementation MRBluetoothDeviceTransport
-
-@synthesize bluetoothDevice = _bluetoothDevice;
+@implementation MRBluetoothDeviceTransport {
+	IOBluetoothRFCOMMChannel *_channel;
+}
 
 + (id)deviceWithAddress:(const BluetoothDeviceAddress *)address {
-	return [[[[self class] alloc] initWithAddress:address] autorelease];
+	return [[[self class] alloc] initWithAddress:address];
 }
 
 + (id)deviceWithBluetoothDevice:(IOBluetoothDevice *)device {
-	return [[[[self class] alloc] initWithBluetoothDevice:device] autorelease];
+	return [[[self class] alloc] initWithBluetoothDevice:device];
 }
 
 - (id)initWithAddress:(const BluetoothDeviceAddress *)address {
@@ -27,7 +27,7 @@
 	
 	self = [super init];
 	if (self) {
-		_bluetoothDevice = [[IOBluetoothDevice deviceWithAddress:address] retain];
+		_bluetoothDevice = [IOBluetoothDevice deviceWithAddress:address];
 	}
 	return self;
 }
@@ -37,7 +37,7 @@
 	
 	self = [super init];
 	if (self) {
-		_bluetoothDevice = [device retain];
+		_bluetoothDevice = device;
 	}
 	return self;
 }
@@ -69,7 +69,7 @@
 	
 	IOReturn status = [_channel writeAsync: (void *) [data bytes]
 									length:[data length]
-									refcon:self];
+									refcon:(__bridge void *)self];
 	
 	if (status == kIOReturnSuccess)
 		return YES;
@@ -97,19 +97,20 @@
 		[self failedToOpen:[NSError IOKitErrorWithReturnCode:status]];
 		return;
 	}
-	
-	status = [_bluetoothDevice openRFCOMMChannelAsync:&_channel
+
+	IOBluetoothRFCOMMChannel *channel;
+	status = [_bluetoothDevice openRFCOMMChannelAsync:&channel
 										withChannelID:channelID
 											 delegate:self];
 	
-	if (status != kIOReturnSuccess) {
+	if (status == kIOReturnSuccess) {
+		_channel = channel;
+	} else {
 		_channel = nil;
 		
 		[self failedToOpen:[NSError IOKitErrorWithReturnCode:status]];
 		return;
 	}
-	
-	[_channel retain];
 }
 
 - (void)rfcommChannelOpenComplete:(IOBluetoothRFCOMMChannel *)rfcommChannel
@@ -135,13 +136,6 @@
 
 - (void)rfcommChannelClosed:(IOBluetoothRFCOMMChannel *)rfcommChannel {
 	[self close];
-}
-
-- (void)dealloc {
-	[_bluetoothDevice release];
-	[_channel release];
-	
-	[super dealloc];
 }
 
 @end

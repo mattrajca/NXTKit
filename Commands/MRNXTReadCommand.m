@@ -32,7 +32,7 @@
 	uint16_t size = OSSwapHostToLittleInt16(bytesToRead);
 	[data appendBytes:&size length:sizeof(size)];
 	
-	return [data autorelease];
+	return data;
 }
 
 @end

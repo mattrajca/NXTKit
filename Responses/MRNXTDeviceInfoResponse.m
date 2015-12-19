@@ -21,10 +21,4 @@
 	freeSpace = OSSwapLittleToHostInt32(freeSpace);
 }
 
-- (void)dealloc {
-	[brickName release];
-	
-	[super dealloc];
-}
-
 @end
